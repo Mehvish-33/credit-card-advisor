@@ -1,0 +1,14 @@
+# requirements.txt
+openai
+langchain
+langchain-community
+langchain-openai
+pinecone
+python-dotenv
+reportlab
+SpeechRecognition
+pyttsx3
+transformers
+torch
+streamlit
+
