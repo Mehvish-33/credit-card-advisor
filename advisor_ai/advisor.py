@@ -67,7 +67,7 @@ loader = UnstructuredURLLoader(urls=urls)
 docs = CharacterTextSplitter(chunk_size=200, chunk_overlap=20).split_documents(loader.load())
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 embedding = OpenAIEmbeddings()
-vectorstore = PineconeStore.from_documents(docs, embedding=embedding, index_name=users)
+vectorstore = PineconeStore.from_documents(docs, embedding=embedding, index_name="users")
 retriever = vectorstore.as_retriever(search_type="similarity", search_kwargs={"k": 5})
 
 qa_nlp = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
